@@ -2,7 +2,15 @@
 {% block title %}details{% endblock title %}
 {% block content %}
     <a href="{{url_for('index')}}" class="btn btn-success">GoBack</a>
-    <a href="{{url_for('delete',id=s.id)}}" class="btn btn-danger">Delete</a>
+    <a onclick=confirmDelete() class="btn btn-danger">Delete</a>
+    <script>
+        function confirmDelete(){
+            var r=confirm("Are you really want to delete record?");
+            if (r==true){
+                window.location.href='/delete/{{s.id}}';
+            }
+        }
+    </script>
     <a href="{{url_for('update',id=s.id)}}" class="btn btn-primary" >Update</a>
     <h1>{{s.id}}</h1>
     <h2>{{s.sname}}</h2>
