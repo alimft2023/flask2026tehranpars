@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}details{% endblock title %}
+{% block content %}
+    <a href="{{url_for('index')}}" class="btn btn-success">GoBack</a>
+    <a href="{{url_for('delete',id=s.id)}}" class="btn btn-danger">Delete</a>
+    <a href="{{url_for('update',id=s.id)}}" class="btn btn-primary" >Update</a>
+    <h1>{{s.id}}</h1>
+    <h2>{{s.sname}}</h2>
+    <h3>{{s.sfamily}}</h3>
+    <small>{{s.age}}</small>
+{% endblock %}
+{% block bgcolor %}skyblue{% endblock %}
